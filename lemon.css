@@ -334,7 +334,7 @@ main:hover{
                 top: -10%;
                 display: grid; place-items: center;
                 img{
-                    width: 80%; height: auto;
+                    width: 70%; height: auto;
                 }
             }
             #price{
