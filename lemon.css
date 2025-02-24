@@ -4,47 +4,29 @@
     box-sizing: border-box;
 }
 body{
-    overflow-x: hidden;
-    width: 100vw;
     background: url(BG.svg);
     background-size: cover;
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-    justify-content: center;
+    overflow-x: hidden;
 }
 nav{
-    border: 1px solid none;
     height: 100px;
-    width: 76%;
-    margin: auto;
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    text-wrap: wrap;
-    & #logo{
-        border: 1px solid none;
+    padding: 0px 120px;
+    #logo{
         height: 100%;
-        display: flex;
-        flex-basis: 0;
-        flex: 1 0 0;
         img{ width: auto; height: 100%; display: block;}
     }
-    & #navContent{
-        border: 1px solid none;
+    #navContent{
         height: 100%;
         display: flex;
-        flex-direction: row;
         align-items: center;
         justify-content: center;
-        flex: 3 0 0;
         ul{
             list-style: none;
             display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            gap: 10px;
+            gap: 50px;
             padding: 0px 20px;
             flex: 1 0 0;
             li a{
@@ -57,14 +39,12 @@ nav{
 
         }
     }
-    & #signup{
-        border: 1px solid none;
+    #signup{
         height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
-        column-gap: 10px;
-        flex: 2 0 0;
+        column-gap: 30px;
         button{
             width: 70px;
             background: none;
@@ -108,22 +88,19 @@ nav:hover{
     }
 }
 main{
-    border: 1px solid none;
+    /* border: 1px solid red; */
     height: 500px;
-    width: 76%;
+    padding: 20% 150px;
     position: relative;
-    margin: auto;
     display: flex;
     flex-flow: row;
     align-items: center;
     #Mtext{
-        border: 1px solid none;
         height: 300px 100%;
         width: 60%;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        /* flex-wrap: wrap; */
         h1{
             font-family: 'Jost', sans-serif;
             font-size: 50px;
@@ -161,14 +138,13 @@ main{
     #Mpic{
         border: 2px solid none;
         position: absolute;
-        right: 0%;
+        right: 5%;
         height: 500px;
         width: 500px;
         z-index: -1;
         display: flex;
         img{
             height: auto; width: 100%; display: block;
-            border: 1px solid none;
         }
     }
 }
@@ -185,17 +161,15 @@ main:hover{
 }
 }
 #sec1{
-    border: 1px solid none;
+    /* border: 1px solid red; */
     height: 500px;
-    width: 76%;
+    padding: 20px 150px;
     position: relative;
-    margin: auto;
     display: flex;
     flex-flow: row;
     align-items: center;
-    transition: all 1s;
     #secsub1{
-        border: 1px solid none;
+        /* border: 1px solid blue; */
         height: 300px 100%;
         width: 30%;
         display: flex;
@@ -217,7 +191,7 @@ main:hover{
         }
     }
     #secsub2{
-        border: 1px solid none;
+        /* border: 1px solid blue; */
         height: 100%;
         width: 70%;
         display: flex;
@@ -278,9 +252,8 @@ main:hover{
 #sec2{
     border: 1px solid none;
     height: 600px;
-    width: 76%;
+    padding: 20px 150px;
     position: relative;
-    margin: auto;
     display: flex;
     flex-flow: column;
     row-gap: 20px;
@@ -397,7 +370,7 @@ main:hover{
 footer{
     /* border: 1px solid red; */
     height: 560px;
-    width: 76%;
+    padding: 20px 150px;
     position: relative;
     margin: auto;
     display: flex;
@@ -455,6 +428,7 @@ footer{
                     border: 1px solid white;
                     margin-top: 20px;
                     margin-bottom: 10px;
+                    resize: none;
                 }
                 & button{
                     height: 35px;
@@ -606,13 +580,34 @@ footer{
     
 }
 
+@media all and (max-width: 948px) {
+    nav{
+        padding: 0px 20px;
+        #navContent ul{
+            gap: 30px;
+        }
+        #signup{
+            column-gap: 20px;
+        }
+    }
+    main{
+        padding: 20px 30px;
+        #Mpic{
+            right: 0%;
+        }
+    }
+    #sec1, #sec2, footer{
+        padding: 20px 30px;
+    }
+    
+}
+
 
 @media all and (max-width: 768px) {
     body{
         padding: 0px 5px;
     }
     nav{
-        width: 100vw;
         padding: 0px ;
         padding-right: 30px;
         #navContent{
@@ -623,7 +618,6 @@ footer{
         }
     }
     main{
-        width: 100vw;
         height: fit-content;
         padding: 0px 20px;
         #Mtext{
@@ -644,7 +638,6 @@ footer{
     #sec1{
         display: block;
         height: fit-content;
-        width: 100vw;
         padding: 0px 20px;
         margin-top: 50px;
         #secsub1{
@@ -683,7 +676,6 @@ footer{
     #sec2{
         display: block;
         height: fit-content;
-        width: 100%;
         position: static;
         padding: 0px 20px;
         margin-top: 40px;
@@ -716,16 +708,17 @@ footer{
     footer{
         display: block;
         height: fit-content;
-        width: 100%;
         padding: 0px 20px;
         margin-top: 30px;
         #footer-1{
             display: flex;
             flex-wrap: wrap;
+            height: fit-content;
             #Msg{
+                height: fit-content;
+                width: 45%;
                 h1{font-size: 22px;}
                 p{font-size: 15px; margin-bottom: 5px;}
-                width: 48%;
                 form{
                     gap: 2px;
                     input{
@@ -747,6 +740,7 @@ footer{
                 }
             }
             #Sitemap{
+                height: fit-content;
                 h1{font-size: 22px;}
                 p{margin-bottom: 10px; font-size: 15px;}
                 width: 35%;
@@ -784,7 +778,6 @@ footer{
 @media all and (max-width: 500px) {
     #sec2{
         #sec2div2{
-            width: 100%;
             height: fit-content;
             display: block;
             padding: 5px;
@@ -798,13 +791,13 @@ footer{
                         width: 75%;
                         height: auto;
                     }}}}}}
-@media all and (max-width: 280px) {
+@media all and (max-width: 320px) {
     body{
         padding-right: 0px;
     }
     nav{
         #signup{
-                    display: none;
+            display: none;
         }
     }
     footer{
@@ -868,6 +861,5 @@ footer{
                 }
             }
         }
-    }
-    
+    }   
 }
